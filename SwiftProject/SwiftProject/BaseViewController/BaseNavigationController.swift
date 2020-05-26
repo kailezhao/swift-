@@ -12,8 +12,14 @@ class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let navgationBar = UINavigationBar.appearance();
+        let shadow = NSShadow.init()
+        shadow.accessibilityFrame = CGRect.zero;
+        navgationBar.titleTextAttributes=[NSAttributedString.Key.foregroundColor:UIColor.blue,NSAttributedString.Key.font:kSystemFont(17),NSAttributedString.Key.shadow:shadow];
+        navgationBar.isTranslucent = true;
+        navgationBar.alpha = 1.0;
+        navgationBar.isHidden = false;
+        
     }
     
 
