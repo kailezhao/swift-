@@ -37,11 +37,11 @@ class BaseTabBarView: UITabBar {
                    let centerBtn = UIButton.init(type: .custom);
                     centerBtn.layer.cornerRadius = 5;
                     centerBtn.backgroundColor = .orange;
-                    centerBtn.frame = CGRect.init(x: CGFloat(index)*w, y: 0, width: w, height:kBottomViewHeight);
+                    centerBtn.frame = CGRect.init(x: CGFloat(index)*w, y: 0, width: w, height:item.bounds.size.height);
                     self.addSubview(centerBtn);
                     index+=1;
                 }
-                item.frame = CGRect.init(x: CGFloat(index)*w, y: 0, width: w, height:kBottomViewHeight);
+                item.frame = CGRect.init(x: CGFloat(index)*w, y: 0, width: w, height:item.bounds.size.height);
                 index += 1;
             }
         }

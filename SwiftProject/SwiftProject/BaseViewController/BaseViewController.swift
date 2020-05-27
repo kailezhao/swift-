@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white;
-        print(Date.KLGetCurrentTime(.YYYYMMDDHHmmss))
+        print(Date.KLGetCurrentTime(.HHmmss))
     }
     
 

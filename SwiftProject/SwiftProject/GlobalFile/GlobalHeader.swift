@@ -19,22 +19,28 @@ func kSystemFont(_ font:CGFloat)->UIFont{
 func kBoldSystemFont(_ blod:CGFloat)->UIFont{
     return UIFont.boldSystemFont(ofSize: blod*kScaleW)
 }
+/// 电池栏的高度
+let kStatusBarHeight = UIApplication.shared.statusBarFrame.size.height;
 
 /// 是否是全面屏
 var isFullScreen:Bool{
-    if #available(iOS 11.0, *) {
-        guard let w = UIApplication.shared.delegate?.window,let unwrapedWindow = w else {
-            return false
-        }
-        if unwrapedWindow.safeAreaInsets.bottom > 0.0 || unwrapedWindow.safeAreaInsets.left > 0.0{
-            return true
-        }
+//    if #available(iOS 11.0, *) {
+//        guard let w = UIApplication.shared.delegate?.window,let unwrapedWindow = w else {
+//            return false
+//        }
+//        if unwrapedWindow.safeAreaInsets.bottom > 0{
+//            return true
+//        }
+//    }
+//    return false;
+    if kStatusBarHeight >= 44.0 {
+        return true
+    }else{
+        return false
     }
-    return false;
 }
 
-/// 电池栏的高度
-let kStatusBarHeight = UIApplication.shared.statusBarFrame.size.height;
+
 
 var kNavigationBarHeight:CGFloat{
     return isFullScreen ? 88.0:64.0

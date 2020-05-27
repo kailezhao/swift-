@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
          guard let winscene = (scene as? UIWindowScene) else { return }
          let win = UIWindow.init(windowScene: winscene);
-         win.backgroundColor = .white;
+         win.backgroundColor = .red;
          win.rootViewController = BaseTabBarViewController.init();
          win.makeKeyAndVisible();
          self.window = win;
